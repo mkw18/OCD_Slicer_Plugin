@@ -1,0 +1,13 @@
+class CT_DetectWidget(ScriptedLoadableModuleWidget):
+    def setup(self):
+        #Show Layout
+        self.ui.LayoutButton.connect(
+                "clicked(bool)",
+                self.showLayout
+        )
+    def showLayout(self):
+        layoutManager = slicer.qMRMLLayoutWidget()
+        layoutManager.setMRMLScene(slicer.mrmlScene)
+        layoutManager.setLayout(slicer.vtkMRMLLayoutNode.SlicerLayoutThreeByThreeSliceView)
+        
+        pass
